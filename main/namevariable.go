@@ -1,3 +1,5 @@
 package stringutil
 
-var MyName = "ron is awesome"
+func MyName() string {
+	return "Ron"
+}
