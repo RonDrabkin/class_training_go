@@ -16,6 +16,8 @@ func main () {
  	case "lucas":
  		fmt.Println("Handle These")
  	case "brandon":
+ 		fmt.Print("How many points are you ahead by?")
+ 		fmt.Scan(&points)
  	    fmt.Println("Watch that 2 pointer")	
 
  	default: 
