@@ -5,7 +5,7 @@ import "fmt"
 func main () {
 
      var name string = "initial"
-//    var score int = "input"
+     var score int = "input"
 //haven't figured out how to make the integer an input yet
      fmt.Print("What is your name ")
 	 fmt.Scan(&name)
