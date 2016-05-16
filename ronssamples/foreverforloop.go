@@ -4,22 +4,19 @@ import "fmt"
 
 func main() {
 
-    i:=0
-    j:="hello"
+	i := 0
+	j := "hello"
 
-    for {
+	for {
 
-    fmt.Println(i, []byte(j))
+		fmt.Println(i, []byte(j))
 
-    i = i + 2 
+		i = i + 2
 
-    if i >99 {
+		if i > 99 {
 
-    	break
-    }
-   
+			break
+		}
 
-   
-       } 
-   } 
-
+	}
+}
