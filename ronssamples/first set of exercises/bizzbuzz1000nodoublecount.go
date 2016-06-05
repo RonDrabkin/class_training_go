@@ -1,3 +1,7 @@
+//Here is the solution to https://projecteuler.net/problem=1
+//It was actually pretty close to the fizzbuzz one from the prior set of exercises.  
+
+
 package main
 
 import "fmt"
