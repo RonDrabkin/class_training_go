@@ -45,7 +45,8 @@ func namechecker() {
 		fmt.Println("Handle These")
 	case "brandon":
 		fmt.Println("Watch that 2 pointer")
-
+	case "rob":
+		fmt.Println("F*ck you my name is Ron")
 	default:
 		fmt.Println("that is a nice name")
 	}
