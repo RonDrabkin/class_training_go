@@ -19,6 +19,11 @@ func main () {
     x= half(x)
     fmt.Println(x)
 
+    pow := make([]int, 10)
+    for i:= range pow {
+    	pow[i] = i
+    fmt.Println(pow)	
+    }
 
 
 }
