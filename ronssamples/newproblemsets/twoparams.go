@@ -2,14 +2,17 @@ package main
 
 import "fmt"
 
-func nameage (string) string {
+var age int
+func nameage (name string, age int) (string, string, int) {
 
-return string, "years old"
+return name , "is ", age  
 }
 
 func main() {
 
-	fmt.Println(nameage(John))
+	name := "John"
+	age = 27
+	fmt.Println(nameage(name, age))
 
 
 }
