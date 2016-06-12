@@ -1,25 +1,18 @@
 package main
+
 import (
-	"flag"
-	//"github.com/golang/glog"
-	"github.com/openedinc/opened-go"
 	"fmt"
 	"io/ioutil"
 	"net/http"
+	//"github.com/openedinc/opened-go"
 )
-
-func init() {
-  flag.Parse()
-}  
 
 func main() {
 	client := &http.Client{}
 
-	req, _ := http.NewRequest("GET", "https://partner.opened.com/1/resources/1750623.json", nil)
-	token,err := opened.GetToken ("","","","")
+	req, _ := http.NewRequest("GET", "https://partner.opened.com/1/resources.json/?descriptive=World War II", nil)
 
-	req.Header.Add("Content-Type", "application/json")
-	req.Header.Add("Authorization", "Bearer "+ token)
+	//token,err := opened.GetToken ("","","","")
 
 	resp, err := client.Do(req)
 
