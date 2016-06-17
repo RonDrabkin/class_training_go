@@ -25,7 +25,7 @@ jsonParams, _ := json.Marshal(params)
 client := &http.Client{}
 req, _ := http.NewRequest("POST", "https://partner.opened.com/1/schools", &jsonParams)
 req.Header.Add("Content-Type", `W/"application/json"`)
-token,err := opened.GetToken ("","","","") //needed
+token,err := opened.GetToken ("","","","") 
 resp, err := client.Do(req)
 if err != nil {
     fmt.Println("Errored when sending request to the server")
