@@ -2,12 +2,12 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
 	"github.com/openedinc/opened-go"
 	"github.com/jmcvetta/napping"
 )
 
 func main() {
+
     
 
 payload := map[string]string{
@@ -32,8 +32,8 @@ if err != nil {
     return
 }
 //defer resp.Body.Close()
-resp_body , _:= ioutil.ReadAll(napping.body)
-//fmt.Println(resp.Status())
-fmt.Println(string(resp_body))
+//resp_body , _:= ioutil.ReadAll(napping.body)
+fmt.Println("response status:", resp.Status())
+//fmt.Println(string(resp_body))
 
 }
