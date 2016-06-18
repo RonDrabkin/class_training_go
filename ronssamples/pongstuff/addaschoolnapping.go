@@ -11,7 +11,7 @@ func main() {
 client := &http.Client{}	
 
 h := http.Header{
- "Authorization": W/"34c34a4627ecb30003df593ffdac965ecb6f82904e70620f69ef0a9ea2ba8bfe"
+ "Authorization": W/"xxxx"
  //add my token from the env.  then it will be s.Post not napping post
 }
 
