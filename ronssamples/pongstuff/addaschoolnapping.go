@@ -8,6 +8,12 @@ import (
 
 func main() {
 
+h := http.Header{
+ "Authorization": `W/"yourtokenhere"`
+}
+s :=  napping.Session{
+       Header: h,
+   }
     
 
 payload := map[string]string{
@@ -22,8 +28,7 @@ payload := map[string]string{
   //it is ok to us a map here not a struct.  examples show a struct but I haven't gotten to that class yet :)
 }
 //jsonParams, _ := json.Marshal(params)
-//client := &http.Client{}
-//req, _ := http.NewRequest("POST", "https://partner.opened.com/1/schools", &jsonParams)
+////req, _ := http.NewRequest("POST", "https://partner.opened.com/1/schools", &jsonParams)
 //req.Header.Add("Content-Type", `W/"application/json"`)
 token,err := opened.GetToken ("","","","") 
 resp, err := napping.Post("https://partner.opened.com/1/schools", &payload, nil, nil)
