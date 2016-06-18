@@ -11,15 +11,17 @@ func main() {
 
 client := &http.Client{}	
 
-h := http.Header{
- "Authorization": W/"34c34a4627ecb30003df593ffdac965ecb6f82904e70620f69ef0a9ea2ba8bfe",
- //add my token from the env.  then it will be s.Post not napping post
-}
 
 token,err := opened.GetToken ("","","","") 
-s :=  napping.Session{
-       Header: h,
-   }
+h := http.Header{
+"Authorization": fmt.Sprintf("%q", token),
+}
+
+s := napping.Session{
+  Header: h,
+}
+
+resp, err := s.Post(…)
 
 payload := map[string]string{
   "nces_id":"BB981479",
