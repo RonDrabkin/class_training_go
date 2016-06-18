@@ -8,13 +8,22 @@ import (
 
 func main() {
 
+client := &http.Client{}	
+
 h := http.Header{
- "Authorization": `W/"yourtokenhere"`
+ "Authorization": W/"34c34a4627ecb30003df593ffdac965ecb6f82904e70620f69ef0a9ea2ba8bfe"
+ //add my token from the env.  then it will be s.Post not napping post
 }
+
+token,err := opened.GetToken ("","","","") 
 s :=  napping.Session{
        Header: h,
    }
     
+resp, err := s.Post("https://partner.opened.com/1/schools", &payload, nil, nil)
+if err != nil {
+    fmt.Println("Errored when sending request to the server")
+    return    
 
 payload := map[string]string{
   "nces_id":"BB981479",
@@ -30,11 +39,8 @@ payload := map[string]string{
 //jsonParams, _ := json.Marshal(params)
 ////req, _ := http.NewRequest("POST", "https://partner.opened.com/1/schools", &jsonParams)
 //req.Header.Add("Content-Type", `W/"application/json"`)
-token,err := opened.GetToken ("","","","") 
-resp, err := napping.Post("https://partner.opened.com/1/schools", &payload, nil, nil)
-if err != nil {
-    fmt.Println("Errored when sending request to the server")
-    return
+
+
 }
 //defer resp.Body.Close()
 //resp_body , _:= ioutil.ReadAll(napping.body)
