@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"net/http"
 	"github.com/openedinc/opened-go"
 	"github.com/jmcvetta/napping"
 )
@@ -11,7 +12,7 @@ func main() {
 client := &http.Client{}	
 
 h := http.Header{
- "Authorization": W/"xxxx"
+ "Authorization": W/"34c34a4627ecb30003df593ffdac965ecb6f82904e70620f69ef0a9ea2ba8bfe",
  //add my token from the env.  then it will be s.Post not napping post
 }
 
@@ -19,11 +20,6 @@ token,err := opened.GetToken ("","","","")
 s :=  napping.Session{
        Header: h,
    }
-    
-resp, err := s.Post("https://partner.opened.com/1/schools", &payload, nil, nil)
-if err != nil {
-    fmt.Println("Errored when sending request to the server")
-    return    
 
 payload := map[string]string{
   "nces_id":"BB981479",
@@ -34,8 +30,15 @@ payload := map[string]string{
   "zip": "77384",
   "low_grade": "K",
   "high_grade": "12",
-  //it is ok to us a map here not a struct.  examples show a struct but I haven't gotten to that class yet :)
-}
+  
+}   
+    
+resp, err := s.Post("https://partner.opened.com/1/schools", &payload, nil, nil)
+if err != nil {
+    fmt.Println("Errored when sending request to the server")
+    return    
+
+
 //jsonParams, _ := json.Marshal(params)
 ////req, _ := http.NewRequest("POST", "https://partner.opened.com/1/schools", &jsonParams)
 //req.Header.Add("Content-Type", `W/"application/json"`)
