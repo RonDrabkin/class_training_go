@@ -11,7 +11,7 @@ func main() {
 
 	token, err := opened.GetToken("", "", "", "")
 	h := &http.Header{}
-	h.Add("Authorization", "Bearer: " + token)
+	h.Add("Authorization", "Bearer " +token)
 
 	s := napping.Session{
 		Header: h,
