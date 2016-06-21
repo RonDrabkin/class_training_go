@@ -12,19 +12,19 @@ func main() {
 	token, err := opened.GetToken("", "", "", "")
 	h := &http.Header{}
 	h.Add("Authorization", "Bearer " +token)
-
+    
 	s := napping.Session{
 		Header: h,
 	}
 
 	payload := map[string]string{
-		"nces_id":    "BB981479",
-		"name":       "Woodlands Christian Academy",
-		"address":    "5900 Academy Way",
-		"city":       "The Woodlands",
-		"state":      "TX",
-		"zip":        "77384",
-		"low_grade":  "K",
+		"nces_id":    "000000000004",
+		"name":       "Latino Youth High School",
+		"address":    "2001 S. California Avenue",
+		"city":       "Chicago",
+		"state":      "IL",
+		"zip":        "60608",
+		"low_grade":  "9",
 		"high_grade": "12",
 	}
 
