@@ -35,6 +35,7 @@ safeIp := url.QueryEscape(resp)
 //escape the query to use encoding
 //error cannot use resp (type *http.Response) as type string in argument to url.QueryEscape
 //i tried resp string, the example is s string
+//my class says you need to decode . but in this case must query.escape first to decode it?
 
 url := fmt.Sprintf("http://api.hostip.info/get_json.php?position=true&ip=%s", safeIp)
 //Sprint returns as a string instead of printing etc....why are we getting json/string

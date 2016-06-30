@@ -14,14 +14,14 @@ func main() {
     
 
 params := map[string]string{
-  "nces_id":"01326677",
-  "name":"Pilgrim Lutheran School",
-  "address":"8601 Chimney Rock",
-  "city": "Houston",
-  "state": "TX",
-  "zip": "77096",
+  "nces_id":"none_yet",
+  "name":"iLead Pacoima",
+  "address":"11261 Glenoaks Blvd",
+  "city": "Pacoima",
+  "state": "CA",
+  "zip": "91331",
   "low_grade": "K",
-  "high_grade": "8",
+  "high_grade": "12",
 }
 jsonParams, _ := json.Marshal(params)
 client := &http.Client{}
