@@ -17,16 +17,16 @@ func main () {
 //create a user defined type to store the data from the API pull
 
 type location struct {
-	CountryName string `json:"country_name"`   //that is called a tag.  json is what used to be xml sorta
+	CountryName string `json:"country"`   //that is called a tag.  json is what used to be xml sorta
 	CountryCode string `json:"country_code"`
 	City string `json:"city"`
-	IP string `json:"ip"`
+	IP string `json:"ip_address"`
 	Latitude string `json:"latitude"`
 	Longtitude string `json:"longtitude"`
 }
 
 //query the API to get the data on the location
-resp, err := http.Get("GET https://ipfind.co?ip=X.X.X.X&auth=b7e99c21-af76-4b21-bf45-463d019c102d")
+resp, err := http.Get("GET https://ipfind.co?ip=207.62.246.10&auth=b7e99c21-af76-4b21-bf45-463d019c102d")
 if err != nil {
 	fmt.Println("oops, error")
 } else {
