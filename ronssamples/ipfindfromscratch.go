@@ -5,6 +5,7 @@ import ( "fmt"
 	   "net/http"
 	   "strings"
 	   "encoding/json"
+	   "ioutil"
 	   )
 
 
@@ -21,15 +22,16 @@ type location struct {
 	Longtitude string `json:"longtitude"`
 }
 
-resp, err := http.Get("https://ipfind.co?ip=207.62.246.10&auth=b7e99c21-af76-4b21-bf45-463d019c102d")
+res, err := http.Get("https://ipfind.co?ip=207.62.246.10&auth=b7e99c21-af76-4b21-bf45-463d019c102d")
 if err != nil {
 	fmt.Println("oops, error")
-} else {
+}  
 
+body, err := ioutil.ReadAll(res.Body)
 TheIP := strings.NewReader((location)resp) //syntax is wrong here
 
 json.NewDecoder(TheIP)
 	fmt.Println(TheIP(Latitude), TheIP(Longtitude)) //i didn't see how you println one or two elements of a struct
 
-}
+
 }
