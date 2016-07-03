@@ -21,16 +21,15 @@ type location struct {
 	Longtitude string `json:"longtitude"`
 }
 
-
-resp, err := http.Get("GET https://ipfind.co?ip=207.62.246.10&auth=b7e99c21-af76-4b21-bf45-463d019c102d")
+resp, err := http.Get("https://ipfind.co?ip=207.62.246.10&auth=b7e99c21-af76-4b21-bf45-463d019c102d")
 if err != nil {
 	fmt.Println("oops, error")
 } else {
 
-read := strings.NewReader(resp)
+TheIP := strings.NewReader((location)resp) //syntax is wrong here
 
-json.NewDecoder(read)
-	fmt.Println(CountryName)
+json.NewDecoder(TheIP)
+	fmt.Println(TheIP(Latitude), TheIP(Longtitude)) //i didn't see how you println one or two elements of a struct
 
 }
 }
