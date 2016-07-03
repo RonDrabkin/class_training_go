@@ -26,7 +26,7 @@ type location struct {
 }
 
 //query the API to get the data on the location
-resp, err := http.Get("GET https://ipfind.co?ip=X.X.X.X&auth=b7e99c21-af76-4b21-bf45-463d019c102d")
+resp, err := http.Get("https://ipfind.co?ip=X.X.X.X&auth=b7e99c21-af76-4b21-bf45-463d019c102d")
 if err != nil {
 	fmt.Println("oops, error")
 } else {
