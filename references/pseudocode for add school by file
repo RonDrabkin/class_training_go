@@ -1,0 +1,25 @@
+pseudocode for add school by file
+
+func readone line 
+
+
+func main
+
+Get Token
+
+Open the file
+
+Declare school with the elements in the file
+
+start loop
+
+Scanner or read line to read line i of the file
+schoolname is the name of the first element
+load the rest of the elements into the slice
+
+post schoolname to partner API
+return status and schoolname
+
+end loop 
+
+
