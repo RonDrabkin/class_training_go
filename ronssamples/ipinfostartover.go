@@ -16,7 +16,7 @@ func main() {
 
 	//create a user defined type to store the data from the API pull
 
-	type location struct {
+	type Location struct {
 		CountryName string `json:"country_name"` //that is called a tag.  json is what used to be xml sorta
 		CountryCode string `json:"country_code"`
 		City        string `json:"city"`
