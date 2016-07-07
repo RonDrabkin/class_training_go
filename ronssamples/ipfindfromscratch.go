@@ -13,7 +13,7 @@ import ( "fmt"
 func main () {
 
 
-type location struct {
+type Location struct {
 	CountryName string `json:"country"`   
 	CountryCode string `json:"country_code"`
 	City string `json:"city"`
