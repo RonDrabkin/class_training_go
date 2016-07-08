@@ -6,7 +6,27 @@ import (
 	"fmt"
 	"net/http"
 	"net/url"
+	"encoding/json"
+	"log"
 )
+
+	type Location struct {
+	IPAddress string `json:"ip_address"`
+	Country string `json:"country"`
+	CountryCode string `json:"country_code"`
+	Continent string `json:"continent"`
+	ContinentCode string `json:"continent_code"`
+	City string `json:"city"`
+	County string `json:"county"`
+	Region string `json:"region"`
+	RegionCode string `json:"region_code"`
+	Timezone string `json:"timezone"`
+	Owner string `json:"owner"`
+	Longitude float64 `json:"longitude"`
+	Latitude float64 `json:"latitude"`
+}
+
+	
 
 func main() {
 
@@ -16,22 +36,16 @@ func main() {
 
 	//create a user defined type to store the data from the API pull
 
-	type Location struct {
-		CountryName string `json:"country_name"` //that is called a tag.  json is what used to be xml sorta
-		CountryCode string `json:"country_code"`
-		City        string `json:"city"`
-		IP          string `json:"ip"`
-		Latitude    string `json:"latitude"`
-		Longtitude  string `json:"longtitude"`
-	}
+
 
 	//query the API to get the data on the location
-	resp, err := http.Get("https://ipfind.co?ip=73.223.170.148&auth=b7e99c21-af76-4b21-bf45-463d019c102d")
+	resp, err := http.Get("https://ipfind.co?ip="122.169.64.203&auth=b7e99c21-af76-4b21-bf45-463d019c102d")
 	if err != nil {
 		fmt.Println("oops, error")
 	} else {
 
 		safeIp := url.QueryEscape(resp)
+
 		//escape the query to use encoding
 		//error cannot use resp (type *http.Response) as type string in argument to url.QueryEscape
 		//i tried resp string, the example is s string
