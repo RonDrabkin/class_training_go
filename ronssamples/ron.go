@@ -6,7 +6,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
-	"log"
+	//"log"
 	"net/http"
 	"net/url"
 )
@@ -35,7 +35,7 @@ var res Location
 
 safeURL := url.QueryEscape("https://ipfind.co?ip=ip&auth=b7e99c21-af76-4b21-bf45-463d019c102d") 
 
-s := fmt.Sprintf(safeURL, "string")
+s := fmt.Sprintf(safeURL, "res")
 
 //sprintF with IP
 //http:Get only 
@@ -56,7 +56,8 @@ res, err := http.Get("safeURL")
 
     json.Unmarshal(body, &res)
 
-    fmt.Println(res{Latitude, Longitude})
+    fmt.Println(s.Latitude, s.Longitude)
+   
 
 //if err then log fatal  ..dont use else
 //defer resp.Body.Close()
