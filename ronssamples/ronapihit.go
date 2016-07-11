@@ -26,7 +26,7 @@ type IpRecord struct {
 }
 
 func main() {
-	ip := "73.223.170.148"
+	ip := "122.169.64.203"
 
 	url := fmt.Sprintf("https://ipfind.co?auth=a3261363-cdc4-47ac-b13e-602445ae7980&ip=%s", ip)
 
@@ -37,17 +37,13 @@ func main() {
 
 	defer resp.Body.Close()
 
+	// Fill the record with the data from the JSON
 	var record IpRecord
 
-	// Fill the record with the data from the JSON
-
-	decoder := json.NewDecoder(resp.Body)
-	err = decoder.Decode(&record)
-	if err != nil {
-		fmt.Println(err)
+	// Use json.Decode for reading streams of JSON data
+	if err = json.NewDecoder(resp.Body).Decode(&record); err != nil {
+		log.Println(err)
 	}
 
 	fmt.Printf("Latitude = %f and Longitude = %f", record.Latitude, record.Longitude)
-	fmt.Println("City = ", record.City)
-	fmt.Println("Owner = ", record.Owner)
 }
