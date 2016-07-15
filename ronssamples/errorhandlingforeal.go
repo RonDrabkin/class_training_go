@@ -5,17 +5,18 @@ import (
 	   "math"
 	)
 var x float64
-var Str string
+var Answer float64
 
 func main () {
 
 	x = 2
-	Str = root(x)
-	fmt.Println(Str)
+	Answer = root(x)
+	fmt.Println(Answer)
 
 }
 
-func root(x float64) string {
-	math.Sqrt(x)
-	return fmt.Sprint(Str) 
+func root(float64) float64 {
+	
+	return math.Sqrt(x)
+
 }
