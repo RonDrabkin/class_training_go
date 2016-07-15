@@ -15,17 +15,6 @@ func main () {
 
 }
 
-/*
-func evalInt (x int) string {
-
-	if x/2 == 0 {
-		return fmt.Sprint("odd")
-	} else {
-
-		return fmt.Sprint("even")
-	}
-}
-*/
 func root(x float64) string {
 	math.Sqrt(x)
 	return fmt.Sprint(Str) 
