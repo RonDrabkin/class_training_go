@@ -47,7 +47,7 @@ func main() {
 		fmt.Println(err)
 	}
 
-	fmt.Printf("Latitude = %f and Longitude = %f", record.Latitude, record.Longitude)
+	fmt.Printf("Latitude = %f and Longitude = %f \n", record.Latitude, record.Longitude)
 	fmt.Println("City = ", record.City)
 	fmt.Println("Owner = ", record.Owner)
 }
