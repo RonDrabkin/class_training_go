@@ -65,6 +65,7 @@ func main() {
   //  jsonParams, _ := json.Marshal(params)
  // client := &http.Client{}
 
+//or do i want to load each row individually and make API requests one by one?
   }
   if err == io.EOF {
       break
