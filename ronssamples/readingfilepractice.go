@@ -17,11 +17,13 @@ func main (){
 
 
     reader := csv.NewReader(f)
+    record, err := reader.Read()
 
-    fmt.Println(reader)
+    //reader.Read()(f []int) , err error) 
+
+    fmt.Println(record)
    
 
-	//f.close() - needed?
 
     //read reads one record from r
     // reader.Read()(f []int, err error) 
