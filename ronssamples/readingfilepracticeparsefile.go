@@ -1,26 +1,26 @@
 package main
 
 import (
-	"fmt"
 	"encoding/csv"
-	"os"
+	"fmt"
 	"io"
 	"log"
-	)
+	"os"
+)
 
-func main (){
+func main() {
 
-	  f, err:= os.Open("/Users/rondrabkinwikihow/Downloads/tryreading.csv")
-  if err != nil {
-    fmt.Println("err happened", err)
-    } else {
-    fmt.Println("I got the file")}
-    defer f.Close()
+	f, err := os.Open("/Users/rondrabkinwikihow/Downloads/tryreading.csv")
+	if err != nil {
+		fmt.Println("err happened", err)
+	} else {
+		fmt.Println("I got the file")
+	}
+	defer f.Close()
 
+	csvReader := csv.NewReader(f)
 
-    csvReader := csv.NewReader(f)
-
-  for rowCount := 0; ; rowCount++ {
+	for rowCount := 0; ; rowCount++ {
 		record, err := csvReader.Read()
 
 		if err == io.EOF {
@@ -39,8 +39,5 @@ func main (){
 		fmt.Println(columns)
 		break
 	}
-   
 
-
-  
 }
