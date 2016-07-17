@@ -42,16 +42,19 @@ func main() {
     "low_grade":  "field7",
     "high_grade": "field8", 
 
-  csvReader := csv.NewReader(f)
+  reader := csv.NewReader(csvfile)
 
-  for rowCount := 0; ; rowCount++ {
-    record, err := csvReader.Read()
+        for {
+               record, err := reader.Read()
+               //record is a slice of strings, each string is one field
+               if err == io.EOF {
+                       break
+               }
+               if err != nil {
+                       log.Fatal(err)
+               }
 
-    if err == io.EOF {
-      break
-    } else if err != nil {
-      log.Fatalln(err)
-    }
+               fmt.Println(record)
 
     //next load each row into the school map
 
