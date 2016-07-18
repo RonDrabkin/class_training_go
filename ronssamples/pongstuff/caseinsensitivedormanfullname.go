@@ -8,7 +8,7 @@ import (
 		)
 
 
-var name string = "initial"
+var name string
 var score1 int
 var score2 int
 var result string
@@ -56,8 +56,8 @@ func namechecker() {
 
 	switch name {
 
-	case "ronald":
-		fmt.Println("yes I am the pong king")
+	case "ronald", "ron":
+		fmt.Println("Yes I am the pong king")
 
 	case "lucas":
 		fmt.Println("Handle These")
