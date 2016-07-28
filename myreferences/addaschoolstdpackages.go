@@ -93,5 +93,5 @@ func main() {
 		log.Println(err)
 	}
 
-	fmt.Println(newrecord.School)
+	fmt.Println("Successfully added ", newrecord.School)
 }
