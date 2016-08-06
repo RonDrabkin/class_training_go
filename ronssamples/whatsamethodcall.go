@@ -10,10 +10,15 @@ func (myrect Rectangle) Area() int {
 	return myrect.length * myrect.width
 }
 
+func (myrect Rectangle) Perimeter () int {
+	return myrect.length + myrect.width + myrect.length + myrect.width
+}	
+
 func main() {
 
 	myrect := Rectangle{4, 3}
 
 	fmt.Println(myrect)
 	fmt.Println(myrect.Area())
+	fmt.Println(myrect.Perimeter())
 }
