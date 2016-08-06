@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-var fname string = "first name"
-var lname string = "last name"
+var fname = "first name"
+var lname = "last name"
 
 func main() {
 
