@@ -12,7 +12,8 @@ func main() {
 
   token,err := opened.GetToken ("","","","")
 
-  req, _ := http.NewRequest("GET", "https://partner.opened.com/1/publishers.json", nil)
+  req, _ := http.NewRequest("GET", "https://partner.opened.com/1/publishers.json?offset=51", nil)
+
 
   req.Header.Add("Authorization", "Bearer " +token)
 
